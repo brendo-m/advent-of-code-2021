@@ -10,7 +10,7 @@ trait Problem {
   def main(args: Array[String]): Unit = {
     val input = fetchInput
     part1(input).foreach(answer => println(s"PART 1: ${answer}"))
-    part2(input).foreach(answer => println(s"PART 1: ${answer}"))
+    part2(input).foreach(answer => println(s"PART 2: ${answer}"))
   }
 
   def fetchInput: Array[String] = {
