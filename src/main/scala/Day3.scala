@@ -1,6 +1,6 @@
 import scala.annotation.tailrec
 
-object Day3 extends Problem {
+object Day3 extends Problem[Int] {
   override def day: Int = 3
 
   override def part1(input: Array[String]): Option[Int] = {

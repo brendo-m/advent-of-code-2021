@@ -2,10 +2,10 @@ import java.io.FileWriter
 import java.net.HttpCookie
 import java.nio.file.{Files, Paths}
 
-trait Problem {
+trait Problem[T] {
   def day: Int
-  def part1(input: Array[String]): Option[Int]
-  def part2(input: Array[String]): Option[Int]
+  def part1(input: Array[String]): Option[T]
+  def part2(input: Array[String]): Option[T]
 
   def main(args: Array[String]): Unit = {
     val input = fetchInput
@@ -34,4 +34,5 @@ trait Problem {
   private def session = System.getenv("AOC_SESSION")
 
   implicit def intToOpt(i: Int): Option[Int] = Some(i)
+  implicit def longToOpt(l: Long): Option[Long] = Some(l)
 }

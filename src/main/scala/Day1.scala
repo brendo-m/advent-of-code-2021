@@ -1,4 +1,4 @@
-object Day1 extends Problem {
+object Day1 extends Problem[Int] {
   override def day: Int = 1
 
   override def part1(input: Array[String]): Option[Int] =
