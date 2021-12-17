@@ -7,8 +7,8 @@ object Day17 extends Problem[Int] {
     val target = readInput(input)
 
     // If the probe is launched from 0 at some velocity y it will eventually return back to 0 with
-    // velocity -(y + 1) so we just need to find y_max such that -(y + 1) = target.minY. xVelocity is
-    // irrelevant. Then finding the highest point is just the sum of numbers 1 to  y_max
+    // velocity -(y + 1) so we just need to solve -(y + 1) = target.minY. xVelocity is
+    // irrelevant. Then finding the highest point is just the sum of numbers 1 to y_max
 
     val yMax = -(target.minY + 1)
     yMax * (yMax + 1) / 2
@@ -17,7 +17,8 @@ object Day17 extends Problem[Int] {
   override def part2(input: Array[String]): Option[Int] = {
     val target = readInput(input)
 
-    // min x velocity is
+    // looking backwards from the target to 0 we just have a sum of increasing numbers ie 0 + 1 + 2 + ...
+    // sum is equal to x * (x + 1) / 2, so find the first x for which this is >= target.minX
     val xMin = LazyList
       .from(1)
       .dropWhile(x => x * (x + 1) < 2 * target.minX)
